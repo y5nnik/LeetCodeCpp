@@ -1,0 +1,18 @@
+class Solution {
+public:
+    vector<int> result (length);
+        for (vector<int> update : updates)
+        {
+            int inc = update[2];
+            result[update[0]] += inc;
+            if(update[1] < length-1) result[update[1]+1] -= inc;
+        }
+
+        int sum = 0;
+        for (int i = 0; i < length; i++) {
+            result[i] += sum;
+            sum = result[i];
+        }
+        
+        return result;
+};
